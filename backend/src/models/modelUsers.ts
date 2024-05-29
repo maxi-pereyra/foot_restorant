@@ -2,15 +2,15 @@ import mongoose from "mongoose";
 
 const UsersSchema = new mongoose.Schema(
     {
-        authOId:{
-            type:String,
+        auth0Id:{
+            type: String,
             require:true
         },
         name:{
-            type:String,
+            type: String,
         },
         email:{
-            type:String,
+            type: String,
             require:true
         },
         adresslineal:{
@@ -19,12 +19,9 @@ const UsersSchema = new mongoose.Schema(
         city:{
             type: String,
         },
-        country:{
-            type: String,
-        }
     }
 )
 
 const Users = mongoose.model('User', UsersSchema);
 
-module.exports = {Users}
+export default Users

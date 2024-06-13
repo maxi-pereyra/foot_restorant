@@ -1,19 +1,21 @@
-import express, {Request , Response} from "express";
+import express, {Application, Request , Response} from "express";
 import cors from "cors";
-import "dotenv/config";
-import mongoose from "mongoose";
-import routes from './routes/routes';
+import './db'
+import authRoutes from './routes/auth'
+import morgan from 'morgan';
 
-mongoose
-.connect(process.env.DB_URI as string)
-.then(()=>{console.log("DB connect")})
-
-const app = express();
+const app: Application = express();
 
 app.use(express.json());
 app.use(cors());
 
-app.use("/", routes)
+// middleware
+app.use(morgan('dev'));
+app.use(express.json())
+
+//rutas
+app.use("/auth",authRoutes)
+//app.use("/", routes)
 
 app.listen(3000 , ()=>{
     console.log("listening in port 3000")

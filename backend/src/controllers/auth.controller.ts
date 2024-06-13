@@ -28,7 +28,8 @@ export const signUp = async (req: Request , res: Response) => {
         email: user.email,
         adress: user.adress,
         city: user.city,
-        password: user.password
+        password: user.password,
+        role: user.role
     })
 
     newUser.password = await newUser.encryptPassword(newUser.password)

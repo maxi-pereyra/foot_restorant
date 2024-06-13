@@ -1,13 +1,14 @@
-import { Router } from "express";
+import express from "express";
+import { validateCreate } from "../validators/usersValidator";
 
-const router: Router = Router();
+const router = express.Router();
 
-import { TokenValidation } from '../libs/verifyToken'
+import { TokenValidation } from '../middleware/verifyToken'
 import { signIn , signUp , profile} from '../controllers/auth.controller'
 
 router.post("/signin", signIn)
-router.post("/signup", signUp)
+router.post("/signup", validateCreate, signUp)
 router.get("/profile", TokenValidation , profile)
 
 
-export default router;
+module.exports = router;

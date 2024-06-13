@@ -5,4 +5,6 @@ export interface UserInterface {
     email: string,
     adresslineal: string,
     city: string,
+    password: string,
+    role: string,
 }

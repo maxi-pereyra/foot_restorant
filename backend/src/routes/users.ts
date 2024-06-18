@@ -12,6 +12,6 @@ router.put('/user',TokenValidation,checkRoleAuth(['user']))
 
 router.delete('/user',TokenValidation,checkRoleAuth(['user']))
 
-module.exports = router
+export default router
 
 

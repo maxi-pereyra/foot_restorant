@@ -5,12 +5,10 @@ import {validaResult} from '../libs/validateHelper'
 export const validateCreate = [
     check('name')
     .exists()
-    .notEmpty()
-    .isEmpty(),
+    .notEmpty(),
     check('email')
     .exists()
-    .isEmail()
-    .isNumeric(),    
+    .isEmail(), 
     check('adress')
     .exists(),
     check('city')

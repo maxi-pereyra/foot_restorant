@@ -11,4 +11,4 @@ router.post("/signup", validateCreate, signUp)
 router.get("/profile", TokenValidation , profile)
 
 
-module.exports = router;
+export default router

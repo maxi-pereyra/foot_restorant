@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import { Document } from "mongodb";
 import bcrypt from 'bcryptjs'
 
@@ -8,6 +8,7 @@ export interface InterfaceUser extends Document {
     adress: string,
     city: string,
     password:string,
+    role:string,
     encryptPassword(password: string): Promise<string>,
     validatePassword(password: string): Promise<boolean>
 }
@@ -45,7 +46,11 @@ const UsersSchema = new mongoose.Schema(
         role:{
             type: String,
             default: 'user'
-        }
+        },
+        orders:[{
+         type: Schema.Types.ObjectId, 
+         ref: 'Order'    
+        }]
     },
     {
         timestamps: true,
@@ -62,6 +67,15 @@ UsersSchema.methods.validatePassword = async function (password: string): Promis
     return await bcrypt.compare(password, this.password);
 
 }
+
+UsersSchema.set('toJSON',{
+    transform: (document, returnedObject) => {
+        returnedObject.id = returnedObject._id
+        delete returnedObject._id
+        delete returnedObject._v
+        delete returnedObject.password
+    }
+})
 
 const Users = mongoose.model<InterfaceUser>('User', UsersSchema);
 

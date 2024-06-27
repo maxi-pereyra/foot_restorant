@@ -1,0 +1,43 @@
+[
+    {
+      "name": "Manzana",
+      "description": "Una fruta deliciosa y refrescante",
+      "image": "manzana.jpg",
+      "price": 1.99,
+      "category": "Frutas",
+      "units": 10
+    },
+    {
+      "name": "Plátano",
+      "description": "Una fruta tropical llena de nutrientes",
+      "image": "platano.jpg",
+      "price": 0.99,
+      "category": "Frutas",
+      "units": 15
+    },
+    {
+      "name": "Zanahoria",
+      "description": "Una verdura crujiente y saludable",
+      "image": "zanahoria.jpg",
+      "price": 0.49,
+      "category": "Verduras",
+      "units": 8
+    },
+    {
+      "name": "Sandía",
+      "description": "Una fruta jugosa perfecta para el verano",
+      "image": "sandia.jpg",
+      "price": 3.99,
+      "category": "Frutas",
+      "units": 5
+    },
+    {
+      "name": "Tomate",
+      "description": "Una verdura versátil utilizada en muchas recetas",
+      "image": "tomate.jpg",
+      "price": 0.79,
+      "category": "Verduras",
+      "units": 12
+    }
+  ]
+  

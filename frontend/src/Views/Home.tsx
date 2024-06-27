@@ -1,13 +1,12 @@
-type Props = {
-    children: React.ReactNode
-};
+import GridCards from "@/components/gridCard";
+import CarShops from "../components/CarShops";
 
-const Home = ({children} : Props) => {
+const Home = () => {
     return (
-
-        <div>
-            {children}
-        </div>
+        <>
+            <GridCards></GridCards>
+            <CarShops></CarShops>
+        </>
     )
 }
 
